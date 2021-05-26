@@ -6,9 +6,10 @@ const maxItems = 5;
 
 
 // function add item to the basket array and return true after adding.
-function addItem(item){
+    // includes stretch goal, max 5 items in basket;
+function addItem(itemToAdd){
   while (basket.length < maxItems){
-    basket.push(item);
+    basket.push(itemToAdd);
     return true;
   }
   return false;
@@ -19,9 +20,9 @@ console.log('TEST - addItem() adding orange to basket', addItem( 'orange' ), bas
 
 
 // function to list all items in the basket separately
-function listItems(array){
-  for(let x of array){
-    console.log(x);
+function listItems(basketArray){
+  for (let itemInBasket of basketArray){
+    console.log(itemInBasket);
   }
 }// end listItems();
 //TEST function returns all items listed in basket
@@ -31,22 +32,21 @@ listItems(basket);
 
 
 // function to empty the basket array
-function empty(array){
-  while (array.length > 0){
-    array.pop();
+function empty(basketArray){
+  while (basketArray.length > 0){
+    basketArray.pop();
   }
 }// end empty()
 // TEST - clear the basket.
-console.log('TEST - empty() Current basket: ', basket);
-console.log('EMPTYING BASKET...');
+console.log('Current basket contents: ', basket);
 empty(basket);
-console.log('Basket is now empty, basket: ', basket);
+console.log('TEST - Emptying Basket.. .. basket contents: ', basket);
 
 
 // function to determine if basket is full
-function isFull(array){
-  return array.length === maxItems;
-}
+function isFull(basketArray){
+  return basketArray.length === maxItems;
+}// end isFull()
 // TEST should log true if basket is full or false if there is space
 console.log(`TEST - isFull() basket should not be full, return False: `, isFull(basket));
 // TEST fill basket and retest for true
@@ -57,12 +57,12 @@ console.log(`TEST - isFull(), should now return true for full: `, isFull(basket)
 
 //UPDATED the required addItem() to max out at 5 items.
 //TEST - basket is currently full with 5 items.  addition of apple and orange returned true above.  Test false condition
-console.log(`TEST - addItem(), adding another item should return false: `, addItem('potion'));
+console.log(`TEST - addItem() can no longer add more than 5 items, adding more should return false: `, addItem('potion'));
 
 
 // function to remove the first matching item from the basket
-function removeItem(item){
-  let i = basket.indexOf(item);
+function removeItem(itemToRemove){
+  let i = basket.indexOf(itemToRemove);
   if (i >= 0){
     return basket.splice(3, 1);
   }
