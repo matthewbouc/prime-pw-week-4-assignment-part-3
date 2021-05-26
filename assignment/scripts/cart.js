@@ -52,8 +52,7 @@ console.log(`TEST - isFull() basket should not be full, return False: `, isFull(
 // TEST fill basket and retest for true
 addItem('blueberry'); addItem('pickaxe'); addItem('rusty sword');
 addItem('torch'); addItem('ladder');
-console.log(`TEST - adding 5 items to basket to test full condition `);
-listItems(basket);
+console.log(`TEST - adding 5 items to basket to test full condition: `, basket);
 console.log(`TEST - isFull(), should now return true for full: `, isFull(basket));
 
 //UPDATED the required addItem() to max out at 5 items.
