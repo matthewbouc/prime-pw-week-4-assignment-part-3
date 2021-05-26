@@ -63,8 +63,21 @@ console.log(`TEST - addItem(), adding another item should return false: `, addIt
 
 // function to remove the first matching item from the basket
 function removeItem(item){
-  if (basket.indexOf(item) >= 0){
-    return true;
+  let i = basket.indexOf(item);
+  if (i >= 0){
+    return basket.splice(3, 1);
   }
-}
-console.log('TEST - basket has item return true: ', removeItem('torch'));
+  return 'null'
+}// end of removeItem()
+
+/// Working tests ////
+// Testing out .indexOf
+// index value that indexOf reports
+//console.log('TEST - expect value of 3 for torch', removeItem('torch'));
+// testing if else conditional
+//console.log('TEST - basket has item return true: ', removeItem('torch'));
+//console.log(`TEST - basket does not have item: return false:, `, removeItem('pail'));
+console.log(`Current basket contents: `, basket);
+console.log(`TEST - removeItem('pail'), should return null: `, removeItem('pail'));
+console.log(`TEST - removeItem('torch'), should return torch: `, removeItem('torch'));
+console.log(`TEST - basket should no longer contain torch`, basket);
