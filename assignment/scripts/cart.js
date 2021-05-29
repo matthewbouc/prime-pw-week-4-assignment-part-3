@@ -6,9 +6,9 @@ const maxItems = 5;
 
 
 // function add item to the basket array and return true after adding.
-    // includes stretch goal, max 5 items in basket;
+    // includes stretch goal, function isFull inside function;
 function addItem(itemToAdd){
-  while (isFull(basket) === false){
+  while (!isFull(basket)){
     basket.push(itemToAdd);
     return true;
   }
